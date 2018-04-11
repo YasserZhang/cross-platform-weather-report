@@ -1,0 +1,16 @@
+<table style="width:100%">
+	<tr>
+		<th>Region</th>
+		<th>IBM</th>
+    <th>AccuWeather</th>
+    <th>NWS</th>
+	</tr>
+    {{#each items}}
+      <tr>
+        <th>{{this.region}}</th>
+        <th>{{this.temp_ibm}}</th>
+        <th>{{this.temp_acc}}</th>
+        <th>{{this.temp_nws}}</th>
+      </tr>
+    {{/each}}
+</table>
