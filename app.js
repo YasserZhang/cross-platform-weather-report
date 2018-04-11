@@ -112,6 +112,6 @@ app.get('/', async function(req, res) {
   res.render('table',{items: toShow});
 });
 
-app.listen(3000, () => {
-  console.log("server starting on http://localhost:3000");
+app.listen(process.env.PORT || appEnv.port, function() {
+  console.log("server starting on " + process.env.PORT);
 });
