@@ -4,6 +4,7 @@
 		<th>IBM</th>
     <th>AccuWeather</th>
     <th>NWS</th>
+    <th>Average</th>
 	</tr>
     {{#each items}}
       <tr>
@@ -11,6 +12,7 @@
         <th>{{this.temp_ibm}}</th>
         <th>{{this.temp_acc}}</th>
         <th>{{this.temp_nws}}</th>
+        <th>{{this.mean}}</th>
       </tr>
     {{/each}}
 </table>

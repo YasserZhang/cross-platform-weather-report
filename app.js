@@ -108,10 +108,24 @@ app.get('/', async function(req, res) {
     if(temp_nws) newRow.temp_nws = temp_nws;
     toShow.push(newRow);
   }
+  for (let i=0; i < toShow.length; i++) {
+    let count = 0;
+    let sum = 0;
+    let keys = Object.keys(toShow[i]);
+    for (let j = 1; j < keys.length; j++) {
+      if(Number(toShow[i][keys[j]]) || Number(toShow[i][keys[j]]) === 0) {
+        sum += Number(toShow[i][keys[j]]);
+        count += 1;
+      }
+    }
+    console.log(count);
+    toShow[i].mean = Math.round(sum/count);
+    console.log(toShow[i].mean);
+  }
   //res.send(temps);
   res.render('table',{items: toShow});
 });
 
 app.listen(process.env.PORT || appEnv.port, function() {
-  console.log("server starting on " + process.env.PORT);
+  console.log("server starting on " + appEnv.port);
 });
